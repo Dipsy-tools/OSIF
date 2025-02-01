@@ -1,6 +1,7 @@
 
-# Import Module
-import json, sys, hashlib, os, time, marshal, getpass
+import json
+import sys
+import requests
 
 # COLOR
 if sys.platform in ["linux", "linux2"]:
@@ -29,8 +30,9 @@ except ImportError:
 # Banner function
 def baliho():
     try:
-        token = open('cookie/token.log', 'r').read()
-        r = requests.get('https://graph.facebook.com/me?access_token={}'.format(token))
+        with open('cookie/token.log', 'r') as file:
+            token = file.read().strip()
+        r = requests.get(f'https://graph.facebook.com/me?access_token={token}')
         a = json.loads(r.text)
         name = a['name']
         print(R + '_     _'.center(44))
@@ -41,7 +43,7 @@ def baliho():
         print(f'[*] {name} [*]'.center(44))
         print(' ')
 
-    except (KeyError, IOError):
+    except (KeyError, IOError) as e:
         print(R + '_     _'.center(44))
         print(r"o' \.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
         print('(o o)'.center(44))
@@ -50,6 +52,7 @@ def baliho():
         print(('O S I F').center(44))
         print(f'{W}     [' + G + 'Open Source Information Facebook' + W + ']')
         print(' ')
+        print(f"[!] Error: {e}")
 
 # Show program info
 def show_program_info():
@@ -70,12 +73,15 @@ def show_program_info():
   author
 ''')
 
+# Contoh pemanggilan fungsi
+baliho()
+show_program_info()
 ####################################################################
 # Print In terminal
 def info_ga():
     pass
 
-	print '''
+print('''
      %sCOMMAND                      DESCRIPTION%s
   -------------       -------------------------------------
 
@@ -98,7 +104,7 @@ def info_ga():
    help               show help
    about              Show information about this program
    exit               Exit the program
-'''%(G,W)
+''' % (G, W))
 def menu_bot():
 	print '''
    %sNumber                  INFO%s
