@@ -16,19 +16,19 @@ OSIF is an accurate facebook account information gathering, all sensitive inform
 
 # [ Installation ]
 ```
-$ pkg update upgrade
-$ pkg install git python2
-$ git clone https://github.com/Dipsy-tools/OSIF
-$ cd OSIF
+pkg update upgrade
+pkg install git python2
+git clone https://github.com/Dipsy-tools/OSIF
+cd OSIF
 ```
 
 # [ Setup ]
 ```
-$ pip2 install -r requirements.txt
+pip2 install -r requirements.txt
 ```
 # [ Running ]
 ```
-$ python2 osif.py
+python2 osif.py
 ```
 # [ Screenshot ]
 <img src=".images/osif.png "/>
