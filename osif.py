@@ -52,7 +52,7 @@ def baliho():
         print(' ')
 
 # Show program info
-def show_program():
+def show_program_info():
     print(f'''
                     {G}INFORMATION{W}
  ------------------------------------------------------
@@ -69,10 +69,11 @@ def show_program():
 * if you find any errors or problems, please contact
   author
 ''')
+
 ####################################################################
-#		    Print In terminal
-def show_program():
+# Print In terminal
 def info_ga():
+    pass
 
 	print '''
      %sCOMMAND                      DESCRIPTION%s
