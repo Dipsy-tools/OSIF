@@ -34,7 +34,7 @@ sys.setdefaultencoding('utf8')
 def baliho():
     try:
         token = open('cookie/token.log', 'r').read()
-        r = requests.get('https://graph.facebook.com/me?access_token={}'.format(token))
+        r = requests.get(f'https://graph.facebook.com/me?access_token={}'.format(token))
         a = json.loads(r.text)
         name = a['name']
         print(R + '_     _'.center(44))
