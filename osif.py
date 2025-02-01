@@ -69,7 +69,7 @@ def baliho():
 #		    Print In terminal
 def show_program():
 
-	print '''
+	print ('''
                     %sINFORMATION%s
  ------------------------------------------------------
 
@@ -84,7 +84,7 @@ def show_program():
 
 * if you find any errors or problems , please contact
   author
-'''%(G,W)
+'''%(G,W))
 def info_ga():
 
 	print '''
