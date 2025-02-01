@@ -141,18 +141,17 @@ def login():
     """Menggunakan Access Token Facebook Graph API."""
     access_token = input("Masukkan Access Token Facebook: ")
 
-    try:
-        response = requests.get(f"https://graph.facebook.com/v18.0/me?access_token={access_token}")
-        user = response.json()
+    response = requests.get("https://graph.facebook.com/v18.0/me?access_token={}".format(access_token))
+    user = response.json()
 
-        if "error" in user:
-            print(f"[!] Gagal login: {user['error']['message']}")
-        else:
-            print(f"[*] Berhasil login sebagai {user['name']} (ID: {user['id']})")
-            os.makedirs("cookie", exist_ok=True)
-            with open("cookie/token.log", "w") as f:
-                f.write(access_token)
-            return access_token
+    if "error" in user:
+        print("[!] Gagal login: {}".format(user['error']['message']))
+    else:
+        print("[*] Berhasil login sebagai {} (ID: {})".format(user['name'], user['id']))
+        os.makedirs("cookie", exist_ok=True)
+        with open("cookie/token.log", "w") as f:
+            f.write(access_token)
+        return access_token
     except requests.exceptions.ConnectionError:
         print("[!] Koneksi gagal, coba lagi nanti")
 
@@ -179,12 +178,12 @@ def fetch_data(url):
 # Mendapatkan daftar post di timeline pengguna
 def get_posts():
     print("[*] Mengambil semua post ID...")
-    url = f"https://graph.facebook.com/v18.0/me/feed?limit=50&access_token={ACCESS_TOKEN}"
+    url = "https://graph.facebook.com/v18.0/me/feed?limit=50&access_token={}".format(ACCESS_TOKEN)
     result = fetch_data(url)
 
     if "data" in result:
         for post in result["data"]:
-            print(f"[*] Post ID: {post['id']}")
+            print("[*] Post ID: {}".format(post['id']))
         return result["data"]
     else:
         print("[!] Gagal mengambil post!")
@@ -193,12 +192,12 @@ def get_posts():
 # Mendapatkan daftar permintaan pertemanan
 def get_friend_requests():
     print("[*] Mengambil daftar permintaan pertemanan...")
-    url = f"https://graph.facebook.com/v18.0/me/friendrequests?access_token={ACCESS_TOKEN}"
+    url = "https://graph.facebook.com/v18.0/me/friendrequests?access_token={}".format(ACCESS_TOKEN)
     result = fetch_data(url)
 
     if "data" in result:
         for friend in result["data"]:
-            print(f"[*] ID Permintaan: {friend['from']['id']}")
+            print("[*] ID Permintaan: {}".format(friend['from']['id']))
         return result["data"]
     else:
         print("[!] Gagal mengambil permintaan pertemanan!")
@@ -207,17 +206,16 @@ def get_friend_requests():
 # Mendapatkan daftar teman
 def get_friends():
     print("[*] Mengambil daftar teman...")
-    url = f"https://graph.facebook.com/v18.0/me/friends?limit=5000&access_token={ACCESS_TOKEN}"
+    url = "https://graph.facebook.com/v18.0/me/friends?limit=5000&access_token={}".format(ACCESS_TOKEN)
     result = fetch_data(url)
 
     if "data" in result:
         for friend in result["data"]:
-            print(f"[*] ID Teman: {friend['id']}")
+            print("[*] ID Teman: {}".format(friend['id']))
         return result["data"]
     else:
         print("[!] Gagal mengambil daftar teman!")
         return []
-
 # Menjalankan fungsi
 if __name__ == "__main__":
     get_posts()
