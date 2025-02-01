@@ -75,7 +75,7 @@ def show_program():
 ''')
 ####################################################################
 #		    Print In terminal
-def show_program
+def show_program():
 def info_ga():
 
 	print '''
