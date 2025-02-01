@@ -17,7 +17,7 @@ try:
     import requests
 except ImportError:
     print(R + '_     _'.center(44))
-    print(r"o' \.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
+    print("o' \\.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
     print('(o o)'.center(44))
     print('ooO--(_)--Ooo'.center(44))
     print(W + ' ')
@@ -35,7 +35,7 @@ def baliho():
         a = json.loads(r.text)
         name = a['name']
         print(R + '_     _'.center(44))
-        print(r"o' \.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
+        print("o' \\.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
         print('(o o)'.center(44))
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
@@ -44,7 +44,7 @@ def baliho():
 
     except (KeyError, IOError) as e:
         print(R + '_     _'.center(44))
-        print(r"o' \.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
+        print("o' \\.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
         print('(o o)'.center(44))
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
@@ -73,8 +73,6 @@ def show_program_info():
 ''')
 
 # Contoh pemanggilan fungsi
-baliho()
-show_program_info()
 ####################################################################
 # Print In terminal
 def info_ga():
