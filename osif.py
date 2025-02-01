@@ -17,7 +17,7 @@ try:
     import requests
 except ImportError:
     print(R + '_     _'.center(44))
-    print("o' \.=./ `o".center(44))
+    print("o' \\.=./ `o".center(44))  # Escape sequence diperbaiki
     print('(o o)'.center(44))
     print('ooO--(_)--Ooo'.center(44))
     print(W + ' ')
@@ -25,10 +25,6 @@ except ImportError:
     print(' ')
     print("[!] Can't import module 'requests'\n")
     sys.exit()
-
-# Set Default encoding
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 # Banner function
 def baliho():
@@ -38,7 +34,7 @@ def baliho():
         a = json.loads(r.text)
         name = a['name']
         print(R + '_     _'.center(44))
-        print("o' \.=./ `o".center(44))
+        print("o' \\.=./ `o".center(44))  # Escape sequence diperbaiki
         print('(o o)'.center(44))
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
@@ -47,7 +43,7 @@ def baliho():
 
     except (KeyError, IOError):
         print(R + '_     _'.center(44))
-        print("o' \.=./ `o".center(44))
+        print("o' \\.=./ `o".center(44))  # Escape sequence diperbaiki
         print('(o o)'.center(44))
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
