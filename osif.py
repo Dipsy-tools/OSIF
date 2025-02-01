@@ -16,14 +16,9 @@ else:
 try:
     import requests
 except ImportError:
-    print(R + '_     _'.center(44))
-    print("o' \\.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
-    print('(o o)'.center(44))
-    print('ooO--(_)--Ooo'.center(44))
-    print(W + ' ')
-    print(('O S I F').center(44))
-    print(' ')
-    print("[!] Can't import module 'requests'\n")
+    print(R + '=' * 44)
+    print(" [!] Can't import module 'requests'".center(44))
+    print('=' * 44)
     sys.exit()
 
 # Banner function
@@ -34,23 +29,15 @@ def baliho():
         r = requests.get(f'https://graph.facebook.com/me?access_token={token}')
         a = json.loads(r.text)
         name = a['name']
-        print(R + '_     _'.center(44))
-        print("o' \\.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
-        print('(o o)'.center(44))
-        print('ooO--(_)--Ooo'.center(44))
-        print(' ' + W)
+        print(R + '=' * 44)
         print(f'[*] {name} [*]'.center(44))
-        print(' ')
+        print('=' * 44)
 
     except (KeyError, IOError) as e:
-        print(R + '_     _'.center(44))
-        print("o' \\.=./ `o".center(44))  # Menggunakan raw string untuk menghindari escape sequence warning
-        print('(o o)'.center(44))
-        print('ooO--(_)--Ooo'.center(44))
-        print(' ' + W)
+        print(R + '=' * 44)
         print(('O S I F').center(44))
         print(f'{W}     [' + G + 'Open Source Information Facebook' + W + ']')
-        print(' ')
+        print('=' * 44)
         print(f"[!] Error: {e}")
 
 # Show program info
@@ -71,6 +58,10 @@ def show_program_info():
 * if you find any errors or problems, please contact
   author
 ''')
+
+# Contoh pemanggilan fungsi
+baliho()
+show_program_info()
 
 # Contoh pemanggilan fungsi
 ####################################################################
