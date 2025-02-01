@@ -173,7 +173,7 @@ import time
 import sys
 
 # Masukkan Access Token Facebook di sini
-ACCESS_TOKEN = "MASUKKAN_ACCESS_TOKEN"
+ACCESS_TOKEN = "62f8ce9f74b12f84c123cc23437a4a32"
 
 # Fungsi untuk mengambil data dari Graph API
 def fetch_data(url):
