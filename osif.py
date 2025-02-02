@@ -274,9 +274,8 @@ def get_friends(access_token):
 
 # Fungsi reaction
 def reaction(posts, amount, reaction_type, token):
-    print('[*] All post IDs successfully retrieved')  # Indentasi
-    print('[*] Start')  # Indentasi
-
+    print('[*] All post IDs successfully retrieved')
+    print('[*] Start')
     try:
         counter = 0
         for post in posts:
