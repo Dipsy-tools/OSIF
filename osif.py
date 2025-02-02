@@ -53,9 +53,7 @@ def baliho():
         name = a['name']
         n.append(a['name'])
 
-        print(R + '_     _'.center(44))
-        print(r"o' \\.=./ `o".center(44))
-        print('(o o)'.center(44))
+        
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
         print(('[*] ' + name + ' [*]').center(44))
@@ -267,11 +265,9 @@ def get_friends(access_token):
     else:
         print("[!] Gagal mengambil daftar teman!")
         return []
-
-# Fungsi reaction
 def reaction(posts, amount, reaction_type, token):
-	print('[*] All post IDs successfully retrieved')
 	prinr('[*] Start')
+	print('[*] All post IDs successfully retrieved')
     try:
         counter = 0
         for post in posts:
