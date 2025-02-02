@@ -3,7 +3,7 @@
 
 ```
                                           _     _
-                                        o' \.=./ `o
+                                        o' \\.=./ `o
                                            (o o)          
                                        ooO--(_)--Ooo
                                        
@@ -17,7 +17,7 @@ OSIF is an accurate facebook account information gathering, all sensitive inform
 # [ Installation ]
 ```
 pkg update upgrade
-pkg install git python2
+pkg install git python3
 git clone https://github.com/Dipsy-tools/OSIF
 cd OSIF
 ```
