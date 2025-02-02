@@ -24,11 +24,7 @@ else:
 try:
     import requests
 except ImportError:
-    print(R + '_     _'.center(44))
-    print("o' \\.=./ `o".center(44))
-    print('(o o)'.center(44))
-    print('ooO--(_)--Ooo'.center(44))
-    print(W + ' ')
+    
     print(('O S I F').center(44))
     print(' ')
     print("[!] Can't import module 'requests'\n")
@@ -274,8 +270,8 @@ def get_friends(access_token):
 
 # Fungsi reaction
 def reaction(posts, amount, reaction_type, token):
-    print('[*] All post IDs successfully retrieved')
-    print('[*] Start')
+	print('[*] All post IDs successfully retrieved')
+	prinr('[*] Start')
     try:
         counter = 0
         for post in posts:
