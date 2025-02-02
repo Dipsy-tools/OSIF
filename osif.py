@@ -94,7 +94,7 @@ print('''
    exit               Exit the program
 ''' % (G, W))
 def menu_bot():
-	print '''
+	print ('''
    %sNumber                  INFO%s
  ---------   ------------------------------------
 
@@ -108,9 +108,9 @@ def menu_bot():
    [ 08 ]      delete all photo albums
 
    [ 00 ]      back to main menu
-'''%(G,W)
+'''%(G,W))
 def menu_reaction():
-	print '''
+	print ('''
    %sNumber                  INFO%s
  ----------   ------------------------------------
 
@@ -122,7 +122,7 @@ def menu_reaction():
    [ 06 ]      reaction 'ANGRY'
 
    [ 00 ]      back to menu bot
-'''%(G,W)
+'''%(G,W))
 ####################################################################
 #                     GENERATE ACCESS TOKEN
 import requests
