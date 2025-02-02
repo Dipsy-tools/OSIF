@@ -132,20 +132,22 @@ def login():
     """Menggunakan Access Token Facebook Graph API."""
     access_token = input("Masukkan Access Token Facebook: ")
 
-    response = requests.get("https://graph.facebook.com/v18.0/me?access_token={}".format(access_token))
-    user = response.json()
+    try:
+        response = requests.get("https://graph.facebook.com/v18.0/me?access_token={}".format(access_token))
+        user = response.json()
 
-    if "error" in user:
-        print("[!] Gagal login: {}".format(user['error']['message']))
-    else:
-        print("[*] Berhasil login sebagai {} (ID: {})".format(user['name'], user['id']))
-        os.makedirs("cookie", exist_ok=True)
-        with open("cookie/token.log", "w") as f:
-            f.write(access_token)
-        return access_token
-except requests.exceptions.ConnectionError as e:
-    print("Connection error:", e)
-print("[!] Koneksi gagal, coba lagi nanti")
+        if "error" in user:
+            print("[!] Gagal login: {}".format(user['error']['message']))
+        else:
+            print("[*] Berhasil login sebagai {} (ID: {})".format(user['name'], user['id']))
+            os.makedirs("cookie", exist_ok=True)
+            with open("cookie/token.log", "w") as f:
+                f.write(access_token)
+            return access_token
+
+    except requests.exceptions.ConnectionError as e:
+        print("[!] Koneksi gagal, coba lagi nanti:", e)
+        return None  # Pastikan program tetap berjalan meskipun terjadi error
 
 token = login()  # Simpan token untuk digunakan di API lain
 ####################################################################
