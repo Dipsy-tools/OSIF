@@ -143,8 +143,9 @@ def login():
         with open("cookie/token.log", "w") as f:
             f.write(access_token)
         return access_token
-    except requests.exceptions.ConnectionError:
-        print("[!] Koneksi gagal, coba lagi nanti")
+except requests.exceptions.ConnectionError as e:
+    print("Connection error:", e)
+print("[!] Koneksi gagal, coba lagi nanti")
 
 token = login()  # Simpan token untuk digunakan di API lain
 ####################################################################
