@@ -25,7 +25,7 @@ try:
     import requests
 except ImportError:
     print(R + '_     _'.center(44))
-    print("o' \.=./ `o".center(44))
+    print("o' \\.=./ `o".center(44))
     print('(o o)'.center(44))
     print('ooO--(_)--Ooo'.center(44))
     print(W + ' ')
@@ -58,7 +58,7 @@ def baliho():
         n.append(a['name'])
 
         print(R + '_     _'.center(44))
-        print(r"o' \.=./ `o".center(44))
+        print(r"o' \\.=./ `o".center(44))
         print('(o o)'.center(44))
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
@@ -67,7 +67,7 @@ def baliho():
 
     except (KeyError, IOError):
         print(R + '_     _'.center(44))
-        print(r"o' \.=./ `o".center(44))
+        print(r"o' \\.=./ `o".center(44))
         print('(o o)'.center(44))
         print('ooO--(_)--Ooo'.center(44))
         print(' ' + W)
@@ -271,11 +271,11 @@ def get_friends(access_token):
     else:
         print("[!] Gagal mengambil daftar teman!")
         return []
-        #Fungsi reaction
-        
-        def reaction(posts, amount, reaction_type, token):
-    print('[*] All post IDs successfully retrieved')
-    print('[*] Start')
+
+# Fungsi reaction
+def reaction(posts, amount, reaction_type, token):
+    print('[*] All post IDs successfully retrieved')  # Indentasi
+    print('[*] Start')  # Indentasi
 
     try:
         counter = 0
