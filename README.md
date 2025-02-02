@@ -24,11 +24,11 @@ cd OSIF
 
 # [ Setup ]
 ```
-pip2 install -r requirements.txt
+pip install -r requirements.txt
 ```
 # [ Running ]
 ```
-python2 osif.py
+python3 osif.py
 ```
 # [ Screenshot ]
 <img src=".images/osif.png "/>
